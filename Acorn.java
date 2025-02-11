@@ -6,9 +6,15 @@ public class Acorn extends Organism {
     private static final int MAX_AGE = 10; // Define the age limit for acorns.
     private int age;
 
-    public Acorn(Location location) {
+    public Acorn(boolean randomAge, Location location) {
         super(location);
         this.age = 0;
+        if(randomAge) {
+            age = rand.nextInt(MAX_AGE);
+        }
+        else {
+            age = 0;
+        }
     }
 
     @Override
@@ -58,7 +64,7 @@ public class Acorn extends Organism {
 
     private void reproduce(Field nextFieldState, List<Location> freeLocations) {
         Location birthLocation = freeLocations.get(rand.nextInt(freeLocations.size()));
-        Acorn newAcorn = new Acorn(birthLocation); // Create a new acorn.
+        Acorn newAcorn = new Acorn(true, birthLocation); // Create a new acorn.
         nextFieldState.placeOrganism(newAcorn, birthLocation); // Place the new acorn in the field.
     }
 

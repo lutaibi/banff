@@ -21,6 +21,7 @@ public class Simulator
     private static final double OWL_CREATION_PROBABILITY = 0.06;
     private static final double BEAR_CREATION_PROBABILITY = 0.01;
     private static final double BERRY_CREATION_PROBABILITY = 0.08;
+    private static final double ACORN_CREATION_PROBABILITY = 0.04;
 
     // The current state of the field.
     private Field field;
@@ -125,34 +126,38 @@ public class Simulator
                 if(rand.nextDouble() <= WOLF_CREATION_PROBABILITY) {
                     Location location = new Location(row, col);
                     Wolf wolf = new Wolf(true, location);
-                    field.placeAnimal(wolf, location);
+                    field.placeOrganism(wolf, location);
                 }
                 else if(rand.nextDouble() <= HARE_CREATION_PROBABILITY) {
                     Location location = new Location(row, col);
                     Hare hare = new Hare(true, location);
-                    field.placeAnimal(hare, location);
+                    field.placeOrganism(hare, location);
                 }
                 else if(rand.nextDouble() <= DEER_CREATION_PROBABILITY) {
                     Location location = new Location(row, col);
                     Deer deer = new Deer(true, location);
-                    field.placeAnimal(deer, location);
+                    field.placeOrganism(deer, location);
                 }
                 else if(rand.nextDouble() <= BEAR_CREATION_PROBABILITY) {
                     Location location = new Location(row, col);
                     Bear bear = new Bear(true, location);
-                    field.placeAnimal(bear, location);
+                    field.placeOrganism(bear, location);
                 }
                 else if(rand.nextDouble() <= OWL_CREATION_PROBABILITY) {
                     Location location = new Location(row, col);
                     Owl owl = new Owl(true, location);
-                    field.placeAnimal(owl, location);
+                    field.placeOrganism(owl, location);
                 }
-                // else if(rand.nextDouble() <= BERRY_CREATION_PROBABILITY) {
-                    // Location location = new Location(row, col);
-                    // Berry berry = new Berry(true, location);
-                    // field.placeAnimal(berry, location);
-                // }
-                // else leave the location empty.
+                else if(rand.nextDouble() <= BERRY_CREATION_PROBABILITY) {
+                    Location location = new Location(row, col);
+                    Berry berry = new Berry(true, location);
+                    field.placeOrganism(berry, location);
+                }
+                else if(rand.nextDouble() <= ACORN_CREATION_PROBABILITY) {
+                    Location location = new Location(row, col);
+                    Acorn acorn = new Acorn(true, location);
+                    field.placeOrganism(acorn, location);
+                }
             }
         }
     }

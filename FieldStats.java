@@ -106,7 +106,7 @@ public class FieldStats
         reset();
         for(int row = 0; row < field.getDepth(); row++) {
             for(int col = 0; col < field.getWidth(); col++) {
-                Organism organism = field.getAnimalAt(new Location(row, col));
+                Organism organism = field.getOrganismAt(new Location(row, col));
                 if(organism != null) {
                     incrementCount(organism.getClass());
                 }

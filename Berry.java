@@ -6,11 +6,17 @@ public class Berry extends Organism {
     private static final int MAX_AGE = 5; // Define the age limit for berries.
     private int age;
 
-    public Berry(Location location) {
+    public Berry(boolean randomAge, Location location) {
         super(location);
         this.age = 0;
+        if(randomAge) {
+            age = rand.nextInt(MAX_AGE);
+        }
+        else {
+            age = 0;
+        }
     }
-
+    
     @Override
     public void act(Field currentField, Field nextFieldState) {
         incrementAge();
@@ -59,7 +65,7 @@ public class Berry extends Organism {
 
     private void reproduce(Field nextFieldState, List<Location> freeLocations) {
         Location birthLocation = freeLocations.get(rand.nextInt(freeLocations.size()));
-        Berry newBerry = new Berry(birthLocation); // Create a new berry.
+        Berry newBerry = new Berry(true, birthLocation); // Create a new berry.
         nextFieldState.placeOrganism(newBerry, birthLocation); // Place the new berry in the field.
     }
 

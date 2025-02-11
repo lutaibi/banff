@@ -119,33 +119,7 @@ public class Field
     {
         int numWolves = 0, numHares = 0, numDeers = 0, numOwls = 0, numBears = 0;
         int numBerries = 0, numAcorns = 0;
-        // for(Animal anAnimal : field.values()) {
-            // if(anAnimal instanceof Wolf wolf) {
-                // if(wolf.isAlive()) {
-                    // numWolves++;
-                // }
-            // }
-            // else if(anAnimal instanceof Hare hare) {
-                // if(hare.isAlive()) {
-                    // numHares++;
-                // }
-            // }
-            // else if(anAnimal instanceof Deer deer) {
-                // if(deer.isAlive()) {
-                    // numDeers++;
-                // }
-            // }
-            // else if(anAnimal instanceof Owl owl) {
-                // if(owl.isAlive()) {
-                    // numOwls++;
-                // }
-            // }
-            // else if(anAnimal instanceof Bear bear) {
-                // if(bear.isAlive()) {
-                    // numBears++;
-                // }
-            // }
-        // }
+    
         for (Object obj : organism.values()) {
             if (obj instanceof Organism organism && organism.isAlive()) {
                 switch (organism) {
