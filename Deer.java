@@ -36,7 +36,7 @@ public class Deer extends Organism
      * Create a new deer. A deer may be created with age
      * zero (a new born) or with a random age.
      * 
-     * @param randomAge If true, the rabbit will have a random age.
+     * @param randomAge If true, the deer will have a random age.
      * @param location The location within the field.
      */
     public Deer(boolean randomAge, Location location)
