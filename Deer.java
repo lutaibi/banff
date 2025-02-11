@@ -12,7 +12,7 @@ import java.util.Random;
 public class Deer extends Organism
 {
     // Characteristics shared by all deer (class variables).
-    // The age at which a hare can start to breed.
+    // The age at which a deer can start to breed.
     private static final int BREEDING_AGE = 2;
     // The age to which a deer can live.
     private static final int MAX_AGE = 12;
